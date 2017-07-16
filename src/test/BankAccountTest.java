@@ -31,36 +31,61 @@ public class BankAccountTest {
 
 	@Test
 	public void testGetInterestRateAccountType0() {
-		assertEquals("Account with accountType 0 should have a 0.0 interest rate", 0.0, blank.getInterestRate(), 0);
+		assertEquals("Account with accountType 0 should have"
+				+ " a 0.0 interest rate", 0.0, blank.getInterestRate(), 0);
 	}
 
 	@Test
 	public void testGetInterestRateAccountType1() {
-		assertEquals("Account with accountType 1 should have a 0.5 interest rate", 0.5, bk1.getInterestRate(), 0);
+		assertEquals("Account with accountType 1 should have"
+				+ " a 0.5 interest rate", 0.5, bk1.getInterestRate(), 0);
 	}
 	
 	@Test
 	public void testGetInterestRateAccountType2() {
-		assertEquals("Account with accountType 2 should have a 4.5 interest rate", 4.5, bk2.getInterestRate(), 0);
+		assertEquals("Account with accountType 2 should have"
+				+ " a 4.5 interest rate", 4.5, bk2.getInterestRate(), 0);
 	}
 
 	@Test
 	public void testGetInterestRateAccountType3() {
-		assertEquals("Account with accountType 3 should have a 1.0 interest rate", 1.0, bk3.getInterestRate(), 0);
+		assertEquals("Account with accountType 3 should have"
+				+ " a 1.0 interest rate", 1.0, bk3.getInterestRate(), 0);
 	}
 
 	@Test
 	public void testGetInterestRateAccountType4() {
-		assertEquals("Account with accountType 4 should have a 15.0 interest rate", 15.0, bk4.getInterestRate(), 0);
+		assertEquals("Account with accountType 4 should have"
+				+ " a 15.0 interest rate", 15.0, bk4.getInterestRate(), 0);
 	}
 	
 	@Test
 	public void testCalculateTotalBalanceAccountType0() {
-		assertEquals("Account with accountType 0 with a balance of $0.00 should have a total with interest of $0.00", 0.00, blank.calculateTotalBalance(), 0);
+		assertEquals("Account with accountType 0 with a balance of $0.00 should have"
+				+ " a total with interest of $0.00", 0.00, blank.calculateTotalBalance(), .005);
 	}
 	
 	@Test
 	public void testCalculateTotalBalanceAccountType1() {
-		assertEquals("Account with accountType 0 with a balance of $0.00 should have a total with interest of $0.00", 0.00, blank.calculateTotalBalance(), 0);
+		assertEquals("Account with accountType 1 with a balance of $25.00 should have"
+				+ " a total with interest of $25.12", 25.12, bk1.calculateTotalBalance(), .005);
+	}
+	
+	@Test
+	public void testCalculateTotalBalanceAccountType2() {
+		assertEquals("Account with accountType 2 with a balance of $25.00 should have"
+				+ " a total with interest of $26.12", 26.12, bk2.calculateTotalBalance(), .005);
+	}
+	
+	@Test
+	public void testCalculateTotalBalanceAccountType3() {
+		assertEquals("Account with accountType 3 with a balance of $25.00 should have"
+				+ " a total with interest of $25.25", 25.25, bk3.calculateTotalBalance(), .005);
+	}
+	
+	@Test
+	public void testCalculateTotalBalanceAccountType4() {
+		assertEquals("Account with accountType 4 with a balance of $25.00 should have"
+				+ " a total with interest of $28.75", 28.75, bk4.calculateTotalBalance(), .005);
 	}
 }
